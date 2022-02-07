@@ -1,0 +1,16 @@
+// =======================================
+// devicon
+// =======================================
+
+.u-devicon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @include mq(){
+        justify-content: center;
+    }
+    &__container{
+    font-size: 80px;
+    margin:$space_l;
+    }
+}

@@ -1,0 +1,101 @@
+// =======================================
+// menu
+// =======================================
+.p-nav-menu{
+    background: rgba(255, 255, 255, .70);
+    padding: $space_s 0;
+    @include mq(){
+    margin: 0;
+    padding-top: 80px;
+    display: block;
+    position: absolute;
+    bottom:  100%;
+    width:  100%;
+    height: 100vh;
+    transition: .5s;
+        
+    &.is-active{
+    transition: .5s;
+    transform: translateY(100%);
+    z-index: 2;
+        }
+    }
+    &.float-active{
+    @include mq(nav){
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all .5s;
+    z-index: 4;
+    }
+}
+}
+
+.p-menu{
+    display: flex;
+    justify-content: center;
+    margin-bottom: $space_l;
+        @include mq(){
+        display: block;
+        font-size: 40px;
+        }
+    &__item{
+    font-size: 20px;
+    margin: 0 3%;
+        @include mq(){
+         font-size: 2
+             0px;   
+        }
+    }
+    &__link{
+    @include mq(){
+    display: block;
+    padding: $space_xl;
+    text-align: center;   
+        }
+    }
+}
+
+.p-menu-trigger{
+    display: none;
+    transition:  all .4s;
+    position: relative;
+    width: 30px;
+    height: 26px;
+    z-index: 3;
+    position: absolute;
+    top:$space_l;
+    right:6%;
+    @include mq(){
+        display: inline-block;
+    }
+    & span{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width:  100%;
+    height: 3px;
+    background-color: $font-color;
+    border-radius:4px;
+    transition: all .4s;  
+        &:nth-of-type(1){
+    top: 0;
+}
+        &:nth-of-type(2){
+    top: 12px;
+}
+        &:nth-of-type(3){
+    bottom: 0;
+}
+    }
+    &.is-active span:nth-of-type(1){
+    transform: translateY(10px) rotate(-45deg);
+    }
+    &.is-active span:nth-of-type(2){
+    opacity: 0;
+    }
+    &.is-active span:nth-of-type(3){
+    transform: translateY(-13px) rotate(45deg);
+    }
+}
+

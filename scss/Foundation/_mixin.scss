@@ -1,0 +1,10 @@
+// =======================================
+// mixin
+// =======================================
+// デフォルトではsmを指定
+ //'sm': 'screen and (max-width: 414px)'
+@mixin mq($breakpoint: sm){ 
+    @media #{map-get($breakpoints, $breakpoint)}{
+       @content; 
+    }
+}

@@ -1,0 +1,15 @@
+// =======================================
+// title
+// =======================================
+
+.u-title{
+    text-align: center;
+    padding:$space_l 0 $space_xl 0;
+    font-size:40px;
+    @include mq(){
+     font-size: 25px;
+    }
+    &-col{
+  background: linear-gradient(#fff 50%, $content-bg 50%);  
+  }
+}

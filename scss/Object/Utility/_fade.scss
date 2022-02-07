@@ -1,0 +1,19 @@
+// =======================================
+// fade-in
+// =======================================
+
+/*下から上にフェードイン*/
+.u-down-to-top {
+  opacity: 0.1;
+  transform: translateY(30px);
+  transition: all 1s;
+  --top{
+    display: inherit;
+    padding-top: inherit;
+    margin-top: inherit;
+  }
+    &.scrollin {
+  opacity: 1;
+  transform: translateY(0);
+  }
+}

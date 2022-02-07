@@ -1,0 +1,23 @@
+// =======================================
+// prof
+// =======================================
+
+.p-prof{
+    &__img{
+        width: 250px;
+        float: left;
+        height: 100%;
+        @include mq(sm){
+        width: inherit;
+        margin-bottom: 20px;
+        }
+    }
+    &__text{
+        width: 100%;
+    }
+    &__btn{
+    display:flex;
+    justify-content: flex-start;
+    letter-spacing: -0.8em;
+ }
+}

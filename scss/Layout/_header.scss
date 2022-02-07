@@ -1,0 +1,19 @@
+// =======================================
+// header
+// =======================================
+
+.header{
+    width:100%;
+    background-color: #fff;
+    // position: absolute;
+    &.float-active-mp{
+    @include mq(){
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all .5s;
+    z-index: 4;
+    } 
+}
+}

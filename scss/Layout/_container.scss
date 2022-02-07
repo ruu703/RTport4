@@ -1,0 +1,64 @@
+// =======================================
+// container
+// =======================================
+.container{
+    width: 100%;
+    min-height: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: $space_4l;
+    padding-top: 70px;
+    background-clip: content-box ;
+    @include mq(){
+      min-height: 300px;
+    }
+    &--top{
+        padding-top: 100px;
+    }
+    
+        &__title {
+        font-size:30px;
+	    line-height:$space_xl;
+	    color: $font-color;
+        padding-left:100px;
+        margin-bottom: $space_3l;
+	    /*background: linear-gradient( 0deg, #fff 0% 60% ,	#48C1E9 60% 100%);
+	    -webkit-background-clip: text;*/
+            @include mq(){
+              padding: 0;
+              text-align: center;
+              font-size:20px;
+            }
+        }
+        &__group{
+        overflow: hidden;
+        width: 100%;
+        }
+        &__pg{
+           padding: 0 !important; 
+        }
+    &-mg{
+    display: flex;
+    // justify-content: center;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
+    // padding: 0 150px;
+    max-width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px 0;
+        @include mq(){
+            max-width: 90%;
+        }
+        @include mq(md){
+            max-width: 90%;
+        }
+        @include mq(lg){
+            max-width: 80%;
+        }
+    }
+    &__prof{
+    overflow: hidden;
+    }
+}
+

@@ -1,0 +1,105 @@
+// =======================================
+// form
+// =======================================
+
+.p-form{
+    width: 60%;
+    margin:0 auto;
+    
+    @include mq(){
+       width:  100%; 
+    }
+}
+
+.p-slider{
+    display: none;
+    width:990px;
+    height: 210px;
+    overflow: hidden;
+    position: relative;
+    @include mq(){
+      display: block;
+      width:330px;  
+    }
+    @include mq(md){
+      display: block;
+      width:660px;  
+    }
+    @include mq(lg){
+      display: block;
+      width:660px;  
+    }
+        &__container{
+        width:1000px;
+        height: 210px;
+        padding: 0;
+        overflow: hidden;
+        margin: 0;
+        list-style: none;
+        position: relative;
+        }
+        &__tr{
+       overflow: hidden; 
+        }
+        &__item{
+        width:330px;
+        height:auto;
+        float: left;
+        padding:0 $space_4l;
+        box-sizing: border-box;
+        transition: .3s;
+        }
+        &__panel{
+          width: 20%;
+          height: auto;
+          float: left;
+          margin: 0 5% 5% 0;
+          box-sizing: border-box;
+          transition: .3s;
+        }
+        &__img{
+        transition: .3s;
+        opacity: 0.9;
+            &:hover{
+            transform: rotate(10deg) scale(1.2);
+            transition: .3s;
+            opacity: 1;
+            }
+        }
+        &__name{
+        padding: $space_s 0;
+        text-align: center;
+        display: block;
+        z-index: 1;
+        }
+        &__nav{
+        position: absolute;
+        cursor: pointer;
+        z-index: 1;
+        font-size: 20px;
+        // &--right{
+        //   top: 38%;
+        //   right: 2%;
+        //   opacity: 0;
+        //   @include mq(md){
+        //     top: 36%;
+        //     right: 0;
+        //   }
+        //   @include mq(lg){
+        //     top: 36%;
+        //     right: 0;
+        //   }
+        // }
+        // &--left{
+        //   top: 38%;
+        //   left: 2%;
+        //   opacity: 0;
+        //   @include mq(md){
+        //     top: 36%;
+        //   }
+        //   @include mq(lg){
+        //     top: 36%;
+        //   }
+        //  }
+        }
+    }
