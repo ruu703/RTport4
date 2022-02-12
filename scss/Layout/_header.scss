@@ -3,8 +3,7 @@
 // =======================================
 
 .header{
-    width:100%;
-    background-color: #fff;
+    width: 100%;
     // position: absolute;
     &.float-active-mp{
     @include mq(){

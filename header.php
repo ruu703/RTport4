@@ -13,6 +13,7 @@
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1');
         ?>
+        <?php wp_enqueue_script('progressbar.js', '/wp-content/themes/portfolio/js/progressbar.js'); ?>
         <?php wp_enqueue_script('app.js', '/wp-content/themes/portfolio/js/app.js'); ?>
         <!-- wordPress管理画面などから設定した内容が反映される -->
         <?php wp_head(); ?>

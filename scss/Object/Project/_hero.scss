@@ -13,29 +13,43 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 140px;
+      // padding-top: 140px;
         @include mq(){
           padding-top: 75px;  
         }
         &__title{
       width: 800px;
       color: #fff;
-      font-size: 50px;
+      font-size: 40px;
       text-align: center;
-      line-height: 80px;
+      // line-height: 80px;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      flex-wrap: wrap;
             @include mq(){
-                font-size: 30px;
+                font-size: 32px;
                 display:flex;
                 align-content: space-around;
-                line-height: 100px;
+                line-height: 50px;
                 flex-direction: column;
                 margin-bottom: 50px;
             }
+            @include mq(md){
+              font-size: 36px;
+              display:flex;
+              align-content: space-around;
+              line-height: 80px;
+              flex-direction: column;
+              margin-bottom: 50px;
+          }
       }
         &__shadow{
-      text-shadow: 1px 2px 10px $font-shadow;
+      text-shadow: 0px 1px 6px $font-shadow;
+      margin-right: 20px;
+      white-space: nowrap;
+      &:last-child{
+        margin: inherit
+      }
       }
         &__anime{
        animation: hero 1s ease-in;

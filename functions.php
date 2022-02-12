@@ -68,9 +68,11 @@ add_action('save_post','save_custom_postdata');
 function add_custom_inputbox(){
 
     add_meta_box('top_img_id','トップ画像URL入力欄','custom_area','page','normal');
-    add_meta_box('hero_text','ヒーローヘッダー内テキスト入力欄','custom_area2','page','normal');
-    add_meta_box('prof_img','プロフィール画像URL入力欄','custom_area3','page','normal');
-    add_meta_box('prof_text','プロフィール説明文入力欄','custom_area4','page','normal');
+    add_meta_box('hero_text1','ヒーローヘッダー内テキスト入力欄1','custom_area2','page','normal');
+    add_meta_box('hero_text2','ヒーローヘッダー内テキスト入力欄2','custom_area3','page','normal');
+    add_meta_box('hero_text3','ヒーローヘッダー内テキスト入力欄3','custom_area4','page','normal');
+    add_meta_box('prof_img','プロフィール画像URL入力欄','custom_area5','page','normal');
+    add_meta_box('prof_text','プロフィール説明文入力欄','custom_area6','page','normal');
 }
   
 //管理画面にフォームを表示する関数
@@ -84,18 +86,27 @@ function custom_area(){
 function custom_area2(){
     global $post;
     // get_post_meta 第一引数には、必ず$post->ID、第二引数にはDBに保存するときのキーを指定、第三引数にはtrueを指定
-    
-    echo 'ヒーローヘッダー内テキスト :<input type="text" name="hero_text" value="'.get_post_meta($post->ID, 'hero_text', true).'">';
+    echo '<input type="text" name="hero_text1" value="'.get_post_meta($post->ID, 'hero_text1', true).'">';
 }
 
 function custom_area3(){
+    global $post;
+    echo '<input type="text" name="hero_text2" value="'.get_post_meta($post->ID, 'hero_text2', true).'">';
+}
+
+function custom_area4(){
+    global $post;
+    echo '<input type="text" name="hero_text3" value="'.get_post_meta($post->ID, 'hero_text3', true).'">';
+}
+
+function custom_area5(){
     global $post;
     // get_post_meta 第一引数には、必ず$post->ID、第二引数にはDBに保存するときのキーを指定、第三引数にはtrueを指定
     
     echo 'プロフィール画像URL :<input type="text" name="prof_img" value="'.get_post_meta($post->ID, 'prof_img', true).'">';
 }
 
-function custom_area4(){
+function custom_area6(){
     global $post;
     // get_post_meta 第一引数には、必ず$post->ID、第二引数にはDBに保存するときのキーを指定、第三引数にはtrueを指定
     
@@ -106,7 +117,9 @@ function custom_area4(){
 function save_custom_postdata($post_id){
     
     $img_top = '';
-    $hero_text = '';
+    $hero_text1 = '';
+    $hero_text2 = '';
+    $hero_text3 = '';
     $prof_img = '';
     $prof_text = '';
 
@@ -118,6 +131,36 @@ function save_custom_postdata($post_id){
         update_post_meta($post_id,'img-top',$img_top);
     }elseif($img_top == ''){
         delete_post_meta($post_id,'img-top',get_post_meta($post_id,'img-top',true));
+    }
+
+    // ヒーローヘッダー内テキスト1
+    if(isset($_POST['hero_text1'])){
+        $hero_text1 = $_POST['hero_text1'];
+    }
+    if($hero_text1 != get_post_meta($post_id, 'hero_text1',true)){
+        update_post_meta($post_id,'hero_text1',$hero_text1);
+    }elseif($hero_text1 == ''){
+        delete_post_meta($post_id,'hero_text1',get_post_meta($post_id,'hero_text1',true));
+    }
+
+    // ヒーローヘッダー内テキスト2
+    if(isset($_POST['hero_text2'])){
+        $hero_text2 = $_POST['hero_text2'];
+    }
+    if($hero_text2 != get_post_meta($post_id, 'hero_text2',true)){
+        update_post_meta($post_id,'hero_text2',$hero_text2);
+    }elseif($hero_text2 == ''){
+        delete_post_meta($post_id,'hero_text2',get_post_meta($post_id,'hero_text2',true));
+    }
+
+    // ヒーローヘッダー内テキスト3
+    if(isset($_POST['hero_text3'])){
+        $hero_text3 = $_POST['hero_text3'];
+    }
+    if($hero_text3 != get_post_meta($post_id, 'hero_text3',true)){
+        update_post_meta($post_id,'hero_text3',$hero_text3);
+    }elseif($hero_text3 == ''){
+        delete_post_meta($post_id,'hero_text3',get_post_meta($post_id,'hero_text3',true));
     }
 
     // プロフィール画像URL入力欄
@@ -157,8 +200,8 @@ function my_widgets_area(){
     register_sidebar( array(
     'name' => 'スキルエリア', // 管理画面での表示名
     'id' => 'widget_skill',// 管理画面フォームのID名
-    'before_widget' => '<div>',
-    'after_widget' => '</div>'
+    'before_widget' => '',
+    'after_widget' => ''
     ));
     register_sidebar( array(
     'name' => 'right sidebar',
@@ -174,6 +217,12 @@ function my_widgets_area(){
         'before_widget' => '<div>',
         'after_widget' => '</div>'
         ));
+        register_sidebar( array(
+            'name' => 'コンタクトフォームエリア', // 管理画面での表示名
+            'id' => 'widget_contact',// 管理画面フォームのID名
+            'before_widget' => '',
+            'after_widget' => ''
+            ));
 }
 
 // ウィジェット自体の作成
@@ -324,7 +373,7 @@ class my_widgets_item2 extends WP_Widget{
         //ウィジェットから入力された情報がある場合、htmlを表示する
         if($url && $img && $skill){
     ?>
-        <div class="p-slider__item">
+        <div class="p-slider__panel">
             <a href="<?php echo $url; ?>">
                 <div class="p-slider__tr">
                     <img src="<?php echo $img; ?>" class="p-slider__img">

@@ -2,8 +2,8 @@
 // menu
 // =======================================
 .p-nav-menu{
-    background: rgba(255, 255, 255, .70);
-    padding: $space_s 0;
+    background: rgb(255, 255, 255);
+    padding: $space_m 0;
     @include mq(){
     margin: 0;
     padding-top: 80px;
@@ -21,11 +21,14 @@
         }
     }
     &.float-active{
+        background: rgba(255, 255, 255, 0.6);
+        transition: all .5s;
+        padding: $space_s 0;
     @include mq(nav){
     position: fixed;
     top: 0;
     width: 100%;
-    transition: all .5s;
+    // transition: all .5s;
     z-index: 4;
     }
 }

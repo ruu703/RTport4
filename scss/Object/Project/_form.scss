@@ -9,6 +9,9 @@
     @include mq(){
        width:  100%; 
     }
+    @include mq(md){
+      width:  80%; 
+   }
 }
 
 .p-slider{
@@ -50,12 +53,18 @@
         transition: .3s;
         }
         &__panel{
-          width: 20%;
+          width: calc(25% - 5%);
           height: auto;
           float: left;
-          margin: 0 5% 5% 0;
+          margin: 0 5% 3% 0;
           box-sizing: border-box;
           transition: .3s;
+          @include mq(){
+            width: calc(50% - 5%); 
+          }
+          @include mq(md){
+            width: calc(33.3% - 5%); 
+          }
         }
         &__img{
         transition: .3s;
@@ -103,3 +112,90 @@
         //  }
         }
     }
+
+    // コンタクトフォーム
+    .wpcf7
+    {
+      width: 60%;
+      margin:0 auto;
+      
+      @include mq(){
+        width:  100%; 
+      }
+      @include mq(md){
+        width:  80%; 
+      }
+      & input[type="text"],input[type="email"],textarea,input[type="submit"]{
+      border: none; 
+      border-radius: 3px;
+      outline: none;
+              width: 100%;
+                margin:$space_m 0;
+                padding: $space_l;
+                background-color: #FEFDEB;
+                font-size: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              -webkit-transition: all .3s;
+              transition: all .3s;
+                box-sizing: border-box;
+                & input[type="text"],input[type="email"],textarea{
+                &:focus{
+                  box-shadow: 0 0 7px $font-color;
+                  border: 1px solid $font-color;
+                }
+              }
+      }
+      & input[type="submit"]{
+        letter-spacing: 1em;
+        background-color: $font-color;
+        border: none;
+border-radius: 3px;
+outline: none;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background-color: $font-color;
+color: #fff;
+box-shadow: 3px 6px 6px #7e99a2; 
+transition: all .3s;
+&:hover{
+  cursor: pointer;
+  opacity:0.7;
+  transition: all .3s;
+  background: #3092b2;
+    // transition: all .3s;
+    transform: translateY(3px);
+    transform: translateY(3px);
+    transform: translateY(3px);
+    box-shadow: 3px 3px 3px #7e99a2;
+  }
+// &:hover{
+//     background: #3092b2;
+//     transition: all .3s;
+//     transform: translateY(3px);
+//     transform: translateY(3px);
+//     transform: translateY(3px);
+//     box-shadow: 3px 3px 3px #7e99a2;
+// }
+&:disabled{
+cursor: not-allowed;
+}
+
+// &-submit{
+// background-color: $font-color;
+// color: #fff;
+// box-shadow: 3px 6px 6px #7e99a2; 
+// transition: all .3s;
+// &:hover{
+//     background: #3092b2;
+//     transition: all .3s;
+//     transform: translateY(3px);
+//     transform: translateY(3px);
+//     transform: translateY(3px);
+//     box-shadow: 3px 3px 3px #7e99a2;
+// }
+// &:disabled{
+// cursor: not-allowed;
+// }
+// }
+      }
+  }
+

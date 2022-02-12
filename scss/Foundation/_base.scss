@@ -31,6 +31,26 @@ nav li{
     }
 }
 nav a{
+        text-decoration: none;
+        color:$font-color;
+        position: relative;
+        display: inline-block;
+        transition: .3s;
+          
+        &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        width: 0;
+        height: 1px;
+        background-color: $font-color;
+        transition: .5s;
+      }
+          &:hover::after {
+        width:  100%;
+          }
+
 @include mq(sm){
       display: block;
       padding: 30px;
@@ -40,27 +60,27 @@ nav a{
 p{
     font-size:16px;
 }
-a{
-  text-decoration: none;
-  color:$font-color;
-  position: relative;
-  display: inline-block;
-  transition: .3s;
+// a{
+//   text-decoration: none;
+//   color:$font-color;
+//   position: relative;
+//   display: inline-block;
+//   transition: .3s;
     
-  &::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: '';
-  width: 0;
-  height: 1px;
-  background-color: $font-color;
-  transition: .3s;
-}
-    &:hover::after {
-  width:  100%;
-    }
-}
+//   &::after {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   content: '';
+//   width: 0;
+//   height: 1px;
+//   background-color: $font-color;
+//   transition: .3s;
+// }
+//     &:hover::after {
+//   width:  100%;
+//     }
+// }
 
 
 .fa-angle{

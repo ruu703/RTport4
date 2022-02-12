@@ -18,19 +18,28 @@ Template Name: Top 〜トップページ〜
       $name = $author->display_name;
       ?>
 
+      <?php
+      require('sendmail.php');
+      ?>
+      
        <main>
           <section class="p-hero"  style="background-image: url(<?php echo get_post_meta($post->ID,'img-top',true);?>);">
    
               <h2 class="p-hero__title">
-                  <!-- <span class="p-hero__shadow">WELCOME</span>
-                  <span class="p-hero__shadow">TO</span> -->
-                  <span class="p-hero__shadow p-hero__anime">
+                  <span class="p-hero__shadow">
+                    <?php echo get_post_meta($post->ID, 'hero_text1', true); ?>
+                  </span>
+                  <span class="p-hero__shadow">
+                    <?php  echo get_post_meta($post->ID, 'hero_text2', true); ?>
+                  </span>
+                  <span class="p-hero__shadow">
                     <?php
                       //ニックネーム出力
                       // echo $author->display_name;
                       // ヒーロヘッダーテキスト出力
-                      echo get_post_meta($post->ID, 'hero_text', true);
+                      echo get_post_meta($post->ID, 'hero_text3', true);
                     ?>
+                  </span>
                     <!-- <span class="p-hero__anime">!</span></span> -->
               </h2>
           </section>
@@ -52,9 +61,10 @@ Template Name: Top 〜トップページ〜
                 <div class="container__prof p-prof__img"><img src="<?php echo get_post_meta($post->ID,'prof_img',true);?>" class="u-prof-img"></div>
                 <div class="p-prof__text">
                  <div>
+                    <div>
                     <p><?php echo get_post_meta($post->ID,'prof_text',true);?></p>
-                 </div>
-                　<div class="p-prof__btn">
+                  </div>
+                    <div class="p-prof__btn">
                 　<button class="c-btn c-btn-twitter">
                 　<i class="devicon-twitter-plain"></i>
                 　<p>Twitter</p>
@@ -64,6 +74,7 @@ Template Name: Top 〜トップページ〜
                 　<p>Facebook</p>
                 　</button>
                 　</div>
+                 </div>
                 </div>
              </div>
             </div> 
@@ -72,22 +83,24 @@ Template Name: Top 〜トップページ〜
           <section id="WORKS" class="container u-down-to-top u-anchor">
            <h2 class="container__title">WORKS</h2>
             <div class="container-mg works container__pg">
-              <div class="p-slider">
-                 <i class="fas fa-angle-left p-slider__nav js-slide-prev"></i>
-                 <i class="fas fa-angle-right p-slider__nav js-slide-next"></i>
-                 <ul class="p-slider__container">
+              <div style="display: flex; flex-wrap: wrap;margin-right: -5%;">
+                 
                   <?php dynamic_sidebar( 'スライダーエリア' ); ?>
-                 </ul>
+                 
               </div>
-
-              
             </div>   
           </section>
 
-          <section id="SKILL" class="container u-bg u-down-to-top u-anchor">
+          <section id="SKILL" class="container u-bg u-down-to-top u-anchor js-progressbar-target">
              <h2 class="container__title  u-title-col">SKILL</h2>
-              <div class="container-mg u-devicon">
+              <div class="container-mg container-mg--skill u-display">
               <?php dynamic_sidebar( 'スキルエリア' ); ?>
+
+              <!-- <label>
+              HTML
+              <label>
+              <progress value="30" max="100">30%</progress> -->
+              <!-- <div id="container" class="c-progrresbar"></div> -->
               
                <!--
                <i class="u-devicon__container devicon-css3-plain-wordmark colored"></i>
@@ -108,13 +121,25 @@ Template Name: Top 〜トップページ〜
           </section> -->
           <section id="CONTACT" class="container u-down-to-top u-anchor">
              <h2 class="container__title">CONTACT</h2> 
-             <div class="container-mg">
-                 <form class="p-form">
-                     <input class="c-input c-input--t" type="text" placeholder="氏名">
-                     <input class="c-input c-input--m" type="email" placeholder="メールアドレス">
-                     <textarea class="c-input c-input--tx js-form-validate" rows="5" placeholder="お問い合わせ内容">  
+             <div class="container-mg container-mg--skill">
+             <?php dynamic_sidebar( 'コンタクトフォームエリア' ); ?>
+                    
+                 <form class="p-form" method="post" action="">
+                     <input class="c-input c-input--t" type="text" name="name" placeholder="氏名">
+                     <p>
+                       <?php if(!empty($err_msg['name'])) echo sanitize($name); ?>
+                     </p>
+                     <input class="c-input c-input--m" type="email" name="email" placeholder="メールアドレス">
+                     <p>
+                       <?php if(!empty($err_msg['email'])) echo sanitize($email); ?>
+                     </p>
+                     <textarea class="c-input c-input--tx js-form-validate" rows="5" name="msg" placeholder="お問い合わせ内容"> 
+                      <?php if(!empty($msg)) echo sanitize($msg); ?> 
                      </textarea>
-                     <button class="c-input c-input--sb c-btn c-btn-submit js-disabled-submit" disabled="disabled">送 信</button> 
+                     <p>
+                       <?php if(!empty($err_msg['msg'])) echo sanitize($msg); ?>
+                     </p>
+                     <input type="submit" class="c-input c-input--sb c-btn c-btn-submit js-disabled-submit" disabled="disabled" value="送 信">
                  </form>
             </div>
           </section>
