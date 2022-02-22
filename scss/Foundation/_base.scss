@@ -51,20 +51,20 @@ nav a{
         width:  100%;
           }
 
-@include mq(sm){
-      display: block;
-      padding: 30px;
-      text-align: center;
-    }
+// @include mq(sm){
+//       display: block;
+//       padding: 30px;
+//       text-align: center;
+//     }
 }
 p{
     font-size:16px;
 }
-// a{
-//   text-decoration: none;
-//   color:$font-color;
-//   position: relative;
-//   display: inline-block;
+a{
+  text-decoration: none;
+  color:$font-color;
+  position: relative;
+  display: inline-block;
 //   transition: .3s;
     
 //   &::after {
@@ -80,7 +80,7 @@ p{
 //     &:hover::after {
 //   width:  100%;
 //     }
-// }
+}
 
 
 .fa-angle{

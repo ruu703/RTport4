@@ -1,6 +1,14 @@
 // =======================================
 // menu
 // =======================================
+.menu{
+    &-item{
+        @include mq(sm){
+        padding: 30px;
+        text-align: center;
+        }
+    }
+}
 .p-nav-menu{
     background: rgb(255, 255, 255);
     padding: $space_m 0;
@@ -21,15 +29,16 @@
         }
     }
     &.float-active{
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.9);
         transition: all .5s;
-        padding: $space_s 0;
     @include mq(nav){
+    background: rgba(255, 255, 255, 0.6);
     position: fixed;
     top: 0;
     width: 100%;
     // transition: all .5s;
     z-index: 4;
+    // padding: inherit;
     }
 }
 }

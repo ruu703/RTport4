@@ -44,14 +44,15 @@ nav a {
     transition: .5s; }
   nav a:hover::after {
     width: 100%; }
-  @media screen and (max-width: 414px) {
-    nav a {
-      display: block;
-      padding: 30px;
-      text-align: center; } }
 
 p {
   font-size: 16px; }
+
+a {
+  text-decoration: none;
+  color: #106A88;
+  position: relative;
+  display: inline-block; }
 
 .fa-angle-left {
   top: 38%;
@@ -152,6 +153,7 @@ select {
   font: inherit; }
 
 .container {
+  overflow: hidden;
   width: 100%;
   min-height: 500px;
   margin-right: auto;
@@ -180,28 +182,46 @@ select {
       .container__title {
         padding: 0;
         text-align: center;
-        font-size: 20px; } }
+        font-size: 20px;
+        margin: 40px; } }
   .container__group {
     width: 100%; }
   .container__pg {
     padding: 0 !important; }
   .container-mg {
+    overflow: hidden;
     display: flex;
     max-width: 70%;
     margin-right: auto;
     margin-left: auto;
     padding: 50px 0; }
-    .container-mg--skill {
-      display: inherit; }
     @media screen and (max-width: 414px) {
       .container-mg {
-        max-width: 90%; } }
+        padding: 0; } }
+    .container-mg--skill {
+      display: inherit;
+      max-width: 50%; }
+    @media screen and (max-width: 414px) {
+      .container-mg {
+        max-width: 80%;
+        display: inherit; } }
     @media screen and (min-width: 415px) and (max-width: 768px) {
       .container-mg {
-        max-width: 90%; } }
+        max-width: 80%;
+        display: inherit; } }
     @media screen and (min-width: 769px) and (max-width: 1024px) {
       .container-mg {
-        max-width: 80%; } }
+        max-width: 70%;
+        display: inherit; } }
+    .container-mg--contact {
+      display: inherit;
+      width: 70%; }
+      @media screen and (max-width: 414px) {
+        .container-mg--contact {
+          width: 100%; } }
+    @media screen and (max-width: 414px) {
+      .container-mg--blog {
+        max-width: 90%; } }
   .container__prof {
     overflow: hidden; }
 
@@ -249,25 +269,24 @@ select {
       box-shadow: 3px 3px 3px #7e99a2; }
     .c-btn-submit:disabled {
       cursor: not-allowed; }
-  .c-btn-twitter {
-    background-color: #00acee;
+  .c-btn-prof {
     color: #fff;
-    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3px;
+    padding: 3px 10px;
     transition: all .5s;
     margin-right: 10px; }
-  .c-btn-facebook {
-    background-color: #3B5998;
-    color: #fff;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3px;
-    transition: all .5s; }
+    .c-btn-prof__name {
+      margin: 0 5px 0 10px; }
+    .c-btn-prof--twitter {
+      background-color: #2abaf1;
+      font-size: 12px; }
+    .c-btn-prof--qiita {
+      background-color: #9fe16d; }
+    .c-btn-prof--github {
+      background-color: #454545;
+      font-size: 16px; }
 
 .c-input {
   border: none;
@@ -356,7 +375,7 @@ select {
     transition: .3s;
     opacity: 0.9; }
     .p-slider__img:hover {
-      transform: rotate(10deg) scale(1.2);
+      transform: rotate(3deg) scale(1.1);
       transition: .3s;
       opacity: 1; }
   .p-slider__name {
@@ -377,6 +396,9 @@ select {
     .wpcf7 {
       width: 100%; } }
   @media screen and (min-width: 415px) and (max-width: 768px) {
+    .wpcf7 {
+      width: 80%; } }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
     .wpcf7 {
       width: 80%; } }
   .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea, .wpcf7 input[type="submit"] {
@@ -467,6 +489,11 @@ select {
     display: inline-block;
     margin: 0 10px; }
 
+@media screen and (max-width: 414px) {
+  .menu-item {
+    padding: 30px;
+    text-align: center; } }
+
 .p-nav-menu {
   background: white;
   padding: 15px 0; }
@@ -485,11 +512,11 @@ select {
         transform: translateY(100%);
         z-index: 2; } }
   .p-nav-menu.float-active {
-    background: rgba(255, 255, 255, 0.6);
-    transition: all .5s;
-    padding: 10px 0; }
+    background: rgba(255, 255, 255, 0.9);
+    transition: all .5s; }
     @media screen and (min-width: 415px) {
       .p-nav-menu.float-active {
+        background: rgba(255, 255, 255, 0.6);
         position: fixed;
         top: 0;
         width: 100%;
@@ -581,6 +608,168 @@ select {
   letter-spacing: -0.8em;
   padding: 20px 0; }
 
+.article {
+  float: left;
+  width: 70%; }
+  @media screen and (max-width: 414px) {
+    .article {
+      float: inherit;
+      width: 100%; } }
+  @media screen and (min-width: 415px) and (max-width: 768px) {
+    .article {
+      float: inherit;
+      width: 100%; } }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .article {
+      float: inherit;
+      width: 100%; } }
+  .article-item {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 20px;
+    border-left: solid 10px #E0F8F7; }
+    @media screen and (max-width: 414px) {
+      .article-item {
+        padding: 20px; } }
+  .article-pagenation {
+    text-align: center;
+    margin: 50px 0; }
+
+.sidebar-wrap {
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.sidebar-widget {
+  height: 100%;
+  float: right;
+  width: 30%;
+  padding: 30px 10px;
+  margin-left: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+  @media screen and (max-width: 414px) {
+    .sidebar-widget {
+      margin-left: inherit;
+      float: inherit;
+      width: inherit;
+      padding: 30px 30px; } }
+  @media screen and (min-width: 415px) and (max-width: 768px) {
+    .sidebar-widget {
+      margin-left: inherit;
+      float: inherit;
+      width: inherit;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px 30px; } }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .sidebar-widget {
+      margin-left: inherit;
+      float: inherit;
+      width: inherit;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px 30px; } }
+
+.sidebar-item {
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%; }
+  @media screen and (max-width: 414px) {
+    .sidebar-item {
+      width: 100%; } }
+  @media screen and (min-width: 415px) and (max-width: 768px) {
+    .sidebar-item {
+      width: 45%; } }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .sidebar-item {
+      width: 45%; } }
+
+#comments {
+  margin-bottom: 30px; }
+
+.comment {
+  margin-bottom: 20px; }
+  .comment-form {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto; }
+    @media screen and (max-width: 414px) {
+      .comment-form {
+        width: inherit; } }
+  .comment-notes {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0; }
+  .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url {
+    display: flex;
+    flex-direction: column; }
+    .comment-form-comment input[type="text"], .comment-form-comment input[type="email"], .comment-form-comment textarea, .comment-form-author input[type="text"], .comment-form-author input[type="email"], .comment-form-author textarea, .comment-form-email input[type="text"], .comment-form-email input[type="email"], .comment-form-email textarea, .comment-form-url input[type="text"], .comment-form-url input[type="email"], .comment-form-url textarea {
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      width: 100%;
+      margin: 15px 0;
+      padding: 20px;
+      background-color: #FEFDEB;
+      font-size: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      box-sizing: border-box; }
+      .comment-form-comment input[type="text"] input[type="text"]:focus, .comment-form-comment input[type="text"] input[type="email"]:focus, .comment-form-comment input[type="text"] textarea:focus, .comment-form-comment input[type="email"] input[type="text"]:focus, .comment-form-comment input[type="email"] input[type="email"]:focus, .comment-form-comment input[type="email"] textarea:focus, .comment-form-comment textarea input[type="text"]:focus, .comment-form-comment textarea input[type="email"]:focus, .comment-form-comment textarea textarea:focus, .comment-form-author input[type="text"] input[type="text"]:focus, .comment-form-author input[type="text"] input[type="email"]:focus, .comment-form-author input[type="text"] textarea:focus, .comment-form-author input[type="email"] input[type="text"]:focus, .comment-form-author input[type="email"] input[type="email"]:focus, .comment-form-author input[type="email"] textarea:focus, .comment-form-author textarea input[type="text"]:focus, .comment-form-author textarea input[type="email"]:focus, .comment-form-author textarea textarea:focus, .comment-form-email input[type="text"] input[type="text"]:focus, .comment-form-email input[type="text"] input[type="email"]:focus, .comment-form-email input[type="text"] textarea:focus, .comment-form-email input[type="email"] input[type="text"]:focus, .comment-form-email input[type="email"] input[type="email"]:focus, .comment-form-email input[type="email"] textarea:focus, .comment-form-email textarea input[type="text"]:focus, .comment-form-email textarea input[type="email"]:focus, .comment-form-email textarea textarea:focus, .comment-form-url input[type="text"] input[type="text"]:focus, .comment-form-url input[type="text"] input[type="email"]:focus, .comment-form-url input[type="text"] textarea:focus, .comment-form-url input[type="email"] input[type="text"]:focus, .comment-form-url input[type="email"] input[type="email"]:focus, .comment-form-url input[type="email"] textarea:focus, .comment-form-url textarea input[type="text"]:focus, .comment-form-url textarea input[type="email"]:focus, .comment-form-url textarea textarea:focus {
+        box-shadow: 0 0 7px #106A88;
+        border: 1px solid #106A88; }
+      @media screen and (max-width: 414px) {
+        .comment-form-comment input[type="text"], .comment-form-comment input[type="email"], .comment-form-comment textarea, .comment-form-author input[type="text"], .comment-form-author input[type="email"], .comment-form-author textarea, .comment-form-email input[type="text"], .comment-form-email input[type="email"], .comment-form-email textarea, .comment-form-url input[type="text"], .comment-form-url input[type="email"], .comment-form-url textarea {
+          padding: 10px; } }
+  .comment-reply-link {
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background-color: #106A88;
+    color: #fff;
+    padding: 3px 5px; }
+
+.reply {
+  text-align: end; }
+
+.form-submit input[type="submit"] {
+  letter-spacing: 1em;
+  background-color: #106A88;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #106A88;
+  color: #fff;
+  box-shadow: 3px 6px 6px #7e99a2;
+  transition: all .3s;
+  width: 100%;
+  margin: 15px 0;
+  padding: 20px;
+  font-size: 20px; }
+  @media screen and (max-width: 414px) {
+    .form-submit input[type="submit"] {
+      font-size: inherit;
+      padding: 15px; } }
+  .form-submit input[type="submit"]:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all .3s;
+    background: #3092b2;
+    transform: translateY(3px);
+    transform: translateY(3px);
+    transform: translateY(3px);
+    box-shadow: 3px 3px 3px #7e99a2; }
+
+.children {
+  margin-left: 20px !important;
+  background: #E0F8F7;
+  padding: 10px !important;
+  margin-top: 20px !important;
+  border-radius: 5px; }
+
 .u-bg {
   background-color: #E0F8F7; }
 
@@ -611,6 +800,8 @@ select {
 .u-mg {
   margin: 20px;
   flex-direction: column; }
+  .u-mg-left-10 {
+    margin-left: 10px; }
 
 .u-prof-img {
   display: block;

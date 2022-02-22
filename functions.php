@@ -73,6 +73,7 @@ function add_custom_inputbox(){
     add_meta_box('hero_text3','ヒーローヘッダー内テキスト入力欄3','custom_area4','page','normal');
     add_meta_box('prof_img','プロフィール画像URL入力欄','custom_area5','page','normal');
     add_meta_box('prof_text','プロフィール説明文入力欄','custom_area6','page','normal');
+    add_meta_box('welcome_text','welcomeテキスト入力欄','custom_area7','page','normal');
 }
   
 //管理画面にフォームを表示する関数
@@ -113,6 +114,13 @@ function custom_area6(){
     echo 'プロフィール説明文 :<textarea cols="100" rows="6" name="prof_text">'.get_post_meta($post->ID, 'prof_text', true).'</textarea>';
 }
 
+function custom_area7(){
+    global $post;
+    // get_post_meta 第一引数には、必ず$post->ID、第二引数にはDBに保存するときのキーを指定、第三引数にはtrueを指定
+    
+    echo 'welcomeテキスト :<textarea cols="100" rows="6" name="welcome_text">'.get_post_meta($post->ID, 'welcome_text', true).'</textarea>';
+}
+
 //フォームに入力された情報をDBへ保存する関数
 function save_custom_postdata($post_id){
     
@@ -122,6 +130,7 @@ function save_custom_postdata($post_id){
     $hero_text3 = '';
     $prof_img = '';
     $prof_text = '';
+    $welcome_text = '';
 
     // ヒーローヘッダー画像（背景）
     if(isset($_POST['img-top'])){
@@ -181,6 +190,16 @@ function save_custom_postdata($post_id){
         update_post_meta($post_id,'prof_text',$prof_text);
     }elseif($prof_text == ''){
         delete_post_meta($post_id,'prof_text',get_post_meta($post_id,'prof_text',true));
+    }
+
+    // welcomeテキスト入力欄
+    if(isset($_POST['welcome_text'])){
+        $welcome_text = $_POST['welcome_text'];
+    }
+    if($welcome_text != get_post_meta($post_id, 'welcome_text',true)){
+        update_post_meta($post_id,'welcome_text',$welcome_text);
+    }elseif($welcome_text == ''){
+        delete_post_meta($post_id,'welcome_text',get_post_meta($post_id,'welcome_text',true));
     }
     
 }

@@ -17,10 +17,6 @@ Template Name: Top 〜トップページ〜
       //投稿者のニックネーム取得
       $name = $author->display_name;
       ?>
-
-      <?php
-      require('sendmail.php');
-      ?>
       
        <main>
           <section class="p-hero"  style="background-image: url(<?php echo get_post_meta($post->ID,'img-top',true);?>);">
@@ -48,7 +44,7 @@ Template Name: Top 〜トップページ〜
            <h2 class="container__title">WELCOME</h2>
             <div class="container-mg container__pg">
                  <p>
-                   ポートフォリオサイトをご覧いただき有難うございます。
+                  <?php echo get_post_meta($post->ID, 'welcome_text', true); ?>
                  </p>
             </div>   
           </section>
@@ -64,15 +60,20 @@ Template Name: Top 〜トップページ〜
                     <div>
                     <p><?php echo get_post_meta($post->ID,'prof_text',true);?></p>
                   </div>
-                    <div class="p-prof__btn">
-                　<button class="c-btn c-btn-twitter">
-                　<i class="devicon-twitter-plain"></i>
-                　<p>Twitter</p>
-                　</button>
-                　<button class="c-btn c-btn-facebook">
-                　<i class="devicon-facebook-plain"></i>
-                　<p>Facebook</p>
-                　</button>
+                  <div class="p-prof__btn">
+                    <a href="http://yahoo.co.jp/" target="_blank" rel="noopener noreferrer">
+                      <button class="c-btn c-btn-prof c-btn-prof--twitter">
+                        <i class="devicon-twitter-plain"></i>
+                        <p class="c-btn-prof__name">Twitter</p>
+                      </button>
+                    </a>
+                    <button class="c-btn c-btn-prof c-btn-prof--github">
+                      <i class="devicon-github-plain"></i>
+                      <p class="c-btn-prof__name">Github</p>
+                    </button>
+                    <button class="c-btn c-btn-prof c-btn-prof--qiita">
+                      <p class="c-btn-prof__name">Qiita</p>
+                    </button>
                 　</div>
                  </div>
                 </div>
@@ -121,26 +122,8 @@ Template Name: Top 〜トップページ〜
           </section> -->
           <section id="CONTACT" class="container u-down-to-top u-anchor">
              <h2 class="container__title">CONTACT</h2> 
-             <div class="container-mg container-mg--skill">
+             <div class="container-mg container-mg--contact">
              <?php dynamic_sidebar( 'コンタクトフォームエリア' ); ?>
-                    
-                 <form class="p-form" method="post" action="">
-                     <input class="c-input c-input--t" type="text" name="name" placeholder="氏名">
-                     <p>
-                       <?php if(!empty($err_msg['name'])) echo sanitize($name); ?>
-                     </p>
-                     <input class="c-input c-input--m" type="email" name="email" placeholder="メールアドレス">
-                     <p>
-                       <?php if(!empty($err_msg['email'])) echo sanitize($email); ?>
-                     </p>
-                     <textarea class="c-input c-input--tx js-form-validate" rows="5" name="msg" placeholder="お問い合わせ内容"> 
-                      <?php if(!empty($msg)) echo sanitize($msg); ?> 
-                     </textarea>
-                     <p>
-                       <?php if(!empty($err_msg['msg'])) echo sanitize($msg); ?>
-                     </p>
-                     <input type="submit" class="c-input c-input--sb c-btn c-btn-submit js-disabled-submit" disabled="disabled" value="送 信">
-                 </form>
             </div>
           </section>
        </main>

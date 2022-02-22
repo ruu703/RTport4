@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blog 〜ポートフォリオ〜
+Template Name: Blog 〜ブログ〜
 */
 ?>
 

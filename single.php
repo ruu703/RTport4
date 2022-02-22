@@ -8,6 +8,7 @@
 			<!-- blog_list -->
 			<section id="blog_list" class="container u-down-to-top">
 				<h1 class="container__title blog-center">BLOG</h1>
+				<div class="container-mg container-mg--blog">
 				<div id="content" class="article">
 				
 				<?php if (have_posts()) : ?>
@@ -25,10 +26,13 @@
 							</p>
 							
 					   </article>
-					<?php endwhile; ?>
 
+						<?php endwhile; ?>
+				
+						<div class="article-item">
 					   <!-- Comments -->
 					   <?php comments_template(); ?>
+					   </div>
 				
 				<?php else : ?>
 				
@@ -37,19 +41,20 @@
 					<?php get_search_form(); ?>
 				
 				<?php endif; ?>
-                    
+
+				<!-- ページネーション  -->
+				<div class="article-pagenation">
+						<a class="prev"><?php previous_post_link('%link', '<< 前へ'); ?></li>
+						<a class="next u-mg-left-10"><?php next_post_link('%link', '次へ >>'); ?></li>
+				</div>
+				  
+
 				</div>
 				<!-- サイドバー  -->
 				<?php get_sidebar(); ?>
+				</div>
+				
 			</section>
-
-			<!-- ページネーション  -->
-			<div class="pagenation">
-				<ul>
-					<li class="prev"><?php previous_post_link('%link', '<<'); ?></li>
-					<li class="next"><?php next_post_link('%link', '>>'); ?></li>
-				</ul>
-			</div>
 		</div>
 		
 		<?php get_footer(); ?>

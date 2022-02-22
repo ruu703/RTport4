@@ -42,7 +42,7 @@
         position: relative;
         }
         &__tr{
-       overflow: hidden; 
+       overflow: hidden;
         }
         &__item{
         width:330px;
@@ -70,7 +70,7 @@
         transition: .3s;
         opacity: 0.9;
             &:hover{
-            transform: rotate(10deg) scale(1.2);
+            transform: rotate(3deg) scale(1.1);
             transition: .3s;
             opacity: 1;
             }
@@ -123,6 +123,9 @@
         width:  100%; 
       }
       @include mq(md){
+        width:  80%; 
+      }
+      @include mq(lg){
         width:  80%; 
       }
       & input[type="text"],input[type="email"],textarea,input[type="submit"]{

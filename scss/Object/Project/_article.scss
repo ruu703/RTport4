@@ -1,0 +1,86 @@
+.article{
+    float: left;
+    width: 70%;
+    @include mq(){
+        float: inherit;
+        width: 100%;
+    }
+    @include mq(md){
+        float: inherit;
+        width: 100%;
+    }
+    @include mq(lg){
+        float: inherit;
+        width: 100%;
+    }
+    &-wrap{
+        // width: 70%;
+        // margin-right: auto;
+        // margin-left: auto;
+    }
+    &-item{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-bottom: 20px;
+        border-left: solid 10px #E0F8F7;
+        @include mq(){
+            padding: 20px;
+        }
+    }
+    &-pagenation{
+        text-align: center;
+        margin: 50px 0;
+    }
+}
+.sidebar{
+    &-wrap{
+        width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    &-widget{
+        height: 100%;
+        float: right;
+        width: 30%;
+        padding: 30px 10px;
+        margin-left: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        @include mq(){
+            margin-left: inherit;
+            float: inherit;
+            width: inherit;
+            padding: 30px 30px;
+        }
+        @include mq(md){
+            margin-left: inherit;
+            float: inherit;
+            width: inherit;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 30px;
+        }
+        @include mq(lg){
+            margin-left: inherit;
+            float: inherit;
+            width: inherit;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 30px;
+        }
+    }
+    &-item{
+        margin-bottom: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+        @include mq(){
+            width: 100%;
+        }
+        @include mq(md){
+            width: 45%;
+        }
+        @include mq(lg){
+            width: 45%;
+        }
+    }
+}

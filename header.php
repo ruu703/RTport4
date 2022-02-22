@@ -7,8 +7,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+        <!-- アイコン　https://devicon.dev/　 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
-        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <!-- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> -->
         <?php
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1');
