@@ -3,20 +3,21 @@
     width: 70%;
     @include mq(){
         float: inherit;
-        width: 100%;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
     @include mq(md){
         float: inherit;
-        width: 100%;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
     @include mq(lg){
         float: inherit;
-        width: 100%;
-    }
-    &-wrap{
-        // width: 70%;
-        // margin-right: auto;
-        // margin-left: auto;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
     &-item{
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -39,30 +40,36 @@
         margin-left: auto;
     }
     &-widget{
+        margin: 0 20px;
         height: 100%;
         float: right;
         width: 30%;
         padding: 30px 10px;
-        margin-left: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         @include mq(){
-            margin-left: inherit;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
             float: inherit;
-            width: inherit;
+            // width: inherit;
             padding: 30px 30px;
         }
         @include mq(md){
-            margin-left: inherit;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
             float: inherit;
-            width: inherit;
+            // width: inherit;
             display: flex;
             flex-wrap: wrap;
             padding: 30px 30px;
         }
         @include mq(lg){
-            margin-left: inherit;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
             float: inherit;
-            width: inherit;
+            // width: inherit;
             display: flex;
             flex-wrap: wrap;
             padding: 30px 30px;

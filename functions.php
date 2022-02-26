@@ -214,7 +214,13 @@ add_action('widgets_init', function(){register_widget('my_widgets_item1');});
 add_action('widgets_init', function(){register_widget('my_widgets_item2');});
 
 function my_widgets_area(){
-    
+    //ウィジェットエリアの作成
+    register_sidebar( array(
+    'name' => 'SNSボタンエリア', // 管理画面での表示名
+    'id' => 'widget_botton',// 管理画面フォームのID名
+    'before_widget' => '',
+    'after_widget' => ''
+    ));
     //スキルウィジェット
     register_sidebar( array(
     'name' => 'スキルエリア', // 管理画面での表示名
@@ -231,17 +237,17 @@ function my_widgets_area(){
     'after_title' => '</h2>',
     ));
     register_sidebar( array(
-        'name' => 'スライダーエリア', // 管理画面での表示名
-        'id' => 'widget_slider',// 管理画面フォームのID名
-        'before_widget' => '<div>',
-        'after_widget' => '</div>'
-        ));
-        register_sidebar( array(
-            'name' => 'コンタクトフォームエリア', // 管理画面での表示名
-            'id' => 'widget_contact',// 管理画面フォームのID名
-            'before_widget' => '',
-            'after_widget' => ''
-            ));
+    'name' => 'ワークエリア', // 管理画面での表示名
+    'id' => 'widget_slider',// 管理画面フォームのID名
+    'before_widget' => '<div>',
+    'after_widget' => '</div>'
+    ));
+    register_sidebar( array(
+    'name' => 'コンタクトフォームエリア', // 管理画面での表示名
+    'id' => 'widget_contact',// 管理画面フォームのID名
+    'before_widget' => '',
+    'after_widget' => ''
+    ));
 }
 
 // ウィジェット自体の作成
@@ -253,27 +259,50 @@ class my_widgets_item1 extends WP_Widget{
     //     $this->name = $name;
     // }
     function my_widgets_item1(){
-        parent::WP_Widget(false, $name = 'スキルウィジェット');
+        parent::WP_Widget(false, $name = 'SNSボタンウィジェット');
     }
     
     // ウィジェットの入力項目を作成する処理
     function form($instance){
-        $title = esc_attr($instance['title']);
-        $skill = esc_attr($instance['skill']); // esc_attr -> サニタイズ
-        
+        $name = esc_attr($instance['name']);
+        $icon = esc_attr($instance['icon']); // esc_attr -> サニタイズ
+        $size = esc_attr($instance['size']);
+        $background = esc_attr($instance['background']);
+        $url = esc_attr($instance['url']);
     ?>
     
+    <!-- 管理画面に表示される入力フォーム -->
     <p>
-        <label for="<?php echo $this->get_field_id('title'); ?>">
-             <?php echo 'スキル名'; ?>
+        <label for="<?php echo $this->get_field_id('name'); ?>">
+             <?php echo 'ボタンテキスト'; ?>
         </label>
-        <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+        <input class="widefat" id="<?php echo $this->get_field_id('name'); ?>" name="<?php echo $this->get_field_name('name'); ?>" type="text" value="<?php echo $name; ?>" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('skill'); ?>">
-             <?php echo 'スキルアイコン'; ?>
+        <label for="<?php echo $this->get_field_id('icon'); ?>">
+             <?php echo 'アイコン'; ?></br>
+             サイトから選んで　<a href="https://devicon.dev/" target="_blank" rel="noopener noreferrer">https://devicon.dev/</a></br>
+             devicon-○○○○○○-plain　丸の部分に入る文字列を指定する
         </label>
-        <input class="widefat" id="<?php echo $this->get_field_id('skill'); ?>" name="<?php echo $this->get_field_name('skill'); ?>" type="text" value="<?php echo $skill; ?>" />
+        <input class="widefat" id="<?php echo $this->get_field_id('icon'); ?>" name="<?php echo $this->get_field_name('icon'); ?>" type="text" value="<?php echo $icon; ?>" />
+    </p>
+    <p>
+        <label for="<?php echo $this->get_field_id('size'); ?>">
+             <?php echo 'アイコンサイズ ex: 16px'; ?>
+        </label>
+        <input class="widefat" id="<?php echo $this->get_field_id('size'); ?>" name="<?php echo $this->get_field_name('size'); ?>" type="text" value="<?php echo $size; ?>" />
+    </p>
+    <p>
+        <label for="<?php echo $this->get_field_id('background'); ?>">
+             <?php echo 'ボタン背景色 ex: #454545'; ?>
+        </label>
+        <input class="widefat" id="<?php echo $this->get_field_id('background'); ?>" name="<?php echo $this->get_field_name('background'); ?>" type="text" value="<?php echo $background; ?>" />
+    </p>
+    <p>
+        <label for="<?php echo $this->get_field_id('url'); ?>">
+             <?php echo 'リンク先URL  ex: http://example.com/'; ?>
+        </label>
+        <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
     </p>
     
     <?php
@@ -282,8 +311,11 @@ class my_widgets_item1 extends WP_Widget{
     // ウィジェットに入力された情報を保存する処理
     function update($new_instance, $old_instance){
         $instance = $old_instance;
-        $instance['title'] = $new_instance['title'];
-        $instance['skill'] = $new_instance['skill']; //php,htmlタグを取り除く
+        $instance['name'] = $new_instance['name'];
+        $instance['icon'] = $new_instance['icon'];
+        $instance['size'] = $new_instance['size']; 
+        $instance['background'] = $new_instance['background']; //php,htmlタグを取り除く
+        $instance['url'] = $new_instance['url'];
         
         return $instance;
         
@@ -300,23 +332,28 @@ class my_widgets_item1 extends WP_Widget{
         
         //ウィジェットから入力された情報を取得
         // apply_filters -> 単純に変数に格納するだけでなく、間に処理を挟むことができる
-        $skill = apply_filters('widget_skill', $instance['skill']);
-        $title = apply_filters('widget_skill', $instance['title']);
+        $name = apply_filters('widget_skill', $instance['name']);
+        $icon = apply_filters('widget_icon', $instance['icon']);
+        $size = apply_filters('widget_size', $instance['size']);
+        $background = apply_filters('widget_background', $instance['background']);
+        $url = apply_filters('widget_url', $instance['url']);
         
         //ウィジェットから入力された情報がある場合、htmlを表示する
-        if($skill){
+        if($name && $background && $url){
     ?>
-    <div>
-        <i class="u-devicon__container <?php echo $skill; ?>"></i>
-            <?php }
-            if($title){
-            ?>
-    <p style="text-align: center;"><?php echo $title; ?></p>
-    </div>
-   
-    <?php
+     
+     <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">
+        <button class="c-btn c-btn-prof c-btn-prof" style="background:<?php echo $background; ?>;font-size: <?php echo $size? $size : '14px' ; ?>;">
+        <?php if(!empty($icon)){ ?>
+        <i class="devicon-<?php echo $icon; ?>-plain"></i>
+        <?php } ?>
+            <p class="c-btn-prof__name"><?php echo $name; ?></p>
+        </button>
+    </a>
+    
+    <?php  
+        }
 
-      }
     }
   }
 

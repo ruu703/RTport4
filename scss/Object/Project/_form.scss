@@ -120,7 +120,7 @@
       margin:0 auto;
       
       @include mq(){
-        width:  100%; 
+        width:  95%; 
       }
       @include mq(md){
         width:  80%; 

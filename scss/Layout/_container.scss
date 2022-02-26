@@ -33,7 +33,7 @@
               padding: 0;
               text-align: center;
               font-size:20px;
-              margin: $space_3l;
+            //   margin: $space_3l;
             }
         }
         &__group{
@@ -54,7 +54,8 @@
     margin-left: auto;
     padding: 50px 0;
     @include mq(){
-        padding: 0;
+        padding: 30px 0;
+        // margin-bottom: 30px;
     }
     &--skill{
         display: inherit;
@@ -81,7 +82,7 @@
         }
         &--blog{
             @include mq(){
-                max-width: 90%;
+                max-width: 95%;
             }
         }
     }

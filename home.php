@@ -61,7 +61,8 @@ Template Name: Top 〜トップページ〜
                     <p><?php echo get_post_meta($post->ID,'prof_text',true);?></p>
                   </div>
                   <div class="p-prof__btn">
-                    <a href="http://yahoo.co.jp/" target="_blank" rel="noopener noreferrer">
+                   <?php dynamic_sidebar( 'SNSボタンエリア' ); ?>
+                    <!-- <a href="http://yahoo.co.jp/" target="_blank" rel="noopener noreferrer">
                       <button class="c-btn c-btn-prof c-btn-prof--twitter">
                         <i class="devicon-twitter-plain"></i>
                         <p class="c-btn-prof__name">Twitter</p>
@@ -73,7 +74,7 @@ Template Name: Top 〜トップページ〜
                     </button>
                     <button class="c-btn c-btn-prof c-btn-prof--qiita">
                       <p class="c-btn-prof__name">Qiita</p>
-                    </button>
+                    </button> -->
                 　</div>
                  </div>
                 </div>
@@ -86,7 +87,7 @@ Template Name: Top 〜トップページ〜
             <div class="container-mg works container__pg">
               <div style="display: flex; flex-wrap: wrap;margin-right: -5%;">
                  
-                  <?php dynamic_sidebar( 'スライダーエリア' ); ?>
+                  <?php dynamic_sidebar( 'ワークエリア' ); ?>
                  
               </div>
             </div>   
