@@ -1,9 +1,10 @@
 // =======================================
 // container
 // =======================================
+
 .container{
     overflow: hidden;
-    width: 100%;
+    width: $site-width;
     min-height: 500px;
     margin-right: auto;
     margin-left: auto;
@@ -14,65 +15,58 @@
       min-height: 300px;
       padding-bottom: 50px;
     }
+    &--color{
+        background-color: $content-bg;
+    }
     &--top{
         padding-top: 100px;
         @include mq(){
             padding-top: 50px;
         }
     }
-    
-        &__title {
+    &__title{
         font-size:30px;
 	    line-height:$space_xl;
-	    color: $font-color;
         padding-left:10%;
         margin-bottom: $space_3l;
-	    /*background: linear-gradient( 0deg, #fff 0% 60% ,	#48C1E9 60% 100%);
-	    -webkit-background-clip: text;*/
             @include mq(){
               padding: 0;
               text-align: center;
               font-size:20px;
-            //   margin: $space_3l;
             }
-        }
-        &__group{
-        width: 100%;
-        }
-        &__pg{
-           padding: 0 !important; 
-        }
-    &-mg{
+            &--color{
+                background: linear-gradient(#fff 50%, $content-bg 50%);
+                @include mq(){
+                font-size: 25px;
+                }
+            }
+    }
+    &__wrap{
     overflow: hidden;
     display: flex;
-    // justify-content: center;
-    // margin-top: 100px;
-    // margin-bottom: 100px;
-    // padding: 0 150px;
     max-width: 70%;
     margin-right: auto;
     margin-left: auto;
     padding: 50px 0;
     @include mq(){
         padding: 30px 0;
-        // margin-bottom: 30px;
     }
-    &--skill{
-        display: inherit;
-        max-width: 50%;
-    }
-        @include mq(){
-            max-width: 80%;
+        &--skill{
             display: inherit;
+            max-width: 50%;
         }
-        @include mq(md){
-            max-width: 80%;
-            display: inherit;
-        }
-        @include mq(lg){
-            max-width: 70%;
-            display: inherit;
-        }
+            @include mq(){
+                max-width: 80%;
+                display: inherit;
+            }
+            @include mq(md){
+                max-width: 80%;
+                display: inherit;
+            }
+            @include mq(lg){
+                max-width: 70%;
+                display: inherit;
+            }
         &--contact{
             display: inherit;
             width: 70%;
@@ -86,8 +80,10 @@
             }
         }
     }
-    &__prof{
-    overflow: hidden;
+    &__item{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -5%;
     }
 }
 

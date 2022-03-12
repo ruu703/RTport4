@@ -2,31 +2,15 @@
 // keyframes
 // =======================================
 
-@keyframes hero{
-    0%{ 
-        transform: translateY(-50px) rotate(180deg);
-    }
-    10%{
-        transform: translateY(-30px) rotate(160deg);
-    }
-    20%{
-        transform: translateY(-10px) rotate(130deg);
-    }
-    30%{
-        transform: translateY(0px) rotate(90deg);
-    }
-    50%{
-        transform: translateY(-20px) rotate(70deg);
-    }
-    70%{
-        transform: translateY(-30px) rotate(50deg);
-    }
-    90%{
-        transform: translateY(-10px) rotate(30deg);
-    }
-    100%{
-        
-        transform: translateY(0px) rotate(0deg);
-    }
-}
+  @keyframes hero{
+    0%   { transform:translate(0%, -100%);  opacity: 0;}
+    20% { transform:translate(0%, 0%);}
+    30% { transform:translate(0%, -20%);}
+    50% { transform:translate(0%, 0%);}
+    60% { transform:translate(0%, -6%); opacity: 1;}
+    80% { transform:translate(0%, 0%);}
+    90% { transform:translate(0%, -2%);}
+    100% { transform:translate(0%, 0%); opacity: 1;}
+  }
+
 

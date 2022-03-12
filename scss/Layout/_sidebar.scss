@@ -1,0 +1,45 @@
+.sidebar{
+    margin: 0 20px;
+    height: 100%;
+    float: right;
+    width: 30%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @include mq(){
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        float: inherit;
+        padding: 30px 30px;
+    }
+    @include mq(md){
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        float: inherit;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px 30px;
+    }
+    @include mq(lg){
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        float: inherit;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px 30px;
+    }
+    &__item{
+        padding: 20px 0;
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+        @include mq(md){
+            width: 45%;
+        }
+        @include mq(lg){
+            width: 45%;
+        }
+    }
+}

@@ -1,12 +1,13 @@
 // =======================================
 // margin
 // =======================================
+
 .u-mg{
     margin: $space_l;
     flex-direction: column;
     &-left{
         &-10{
-            margin-left: 10px;
+            margin-left: $space_s;
         }
     }
 }

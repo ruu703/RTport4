@@ -1,0 +1,44 @@
+// =======================================
+// ブログサイドバー　検索フォーム
+// =======================================
+
+#s,#searchsubmit{
+    border: none; 
+    border-radius: 3px;
+    outline: none;
+  //   width: 100%;
+    margin:$space_m 0;
+    padding: $space_xs;
+    background-color: #FEFDEB;
+  //   font-size: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all .3s;
+    box-sizing: border-box;
+        & input[type="text"],input[type="email"],textarea{
+          &:focus{
+            box-shadow: 0 0 7px $font-color;
+            border: 1px solid $font-color;
+          }
+        }
+}
+#searchsubmit{
+  background-color: $font-color;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: $font-color;
+  color: #fff;
+  box-shadow: 3px 6px 6px #7e99a2; 
+  transition: all .3s;
+  &:hover{
+      cursor: pointer;
+      opacity:0.7;
+      transition: all .3s;
+      background: #3092b2;
+      transform: translateY(3px);
+      transform: translateY(3px);
+      transform: translateY(3px);
+      box-shadow: 3px 3px 3px #7e99a2;
+    }
+}

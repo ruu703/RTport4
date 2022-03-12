@@ -231,7 +231,7 @@ function my_widgets_area(){
     register_sidebar( array(
     'name' => 'right sidebar',
     'id' => 'my_sidebar',
-    'before_widget' => '<div class="sidebar-item">',
+    'before_widget' => '<div class="sidebar__item">',
     'after_widget' => '</div>',
     'before_title' => '<h2>',
     'after_title' => '</h2>',
@@ -343,11 +343,11 @@ class my_widgets_item1 extends WP_Widget{
     ?>
      
      <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">
-        <button class="c-btn c-btn-prof c-btn-prof" style="background:<?php echo $background; ?>;font-size: <?php echo $size? $size : '14px' ; ?>;">
+        <button class="p-prof__btn c-btn" style="background:<?php echo $background; ?>;font-size: <?php echo $size? $size : '14px' ; ?>;">
         <?php if(!empty($icon)){ ?>
         <i class="devicon-<?php echo $icon; ?>-plain"></i>
         <?php } ?>
-            <p class="c-btn-prof__name"><?php echo $name; ?></p>
+            <p class="p-prof__btntext"><?php echo $name; ?></p>
         </button>
     </a>
     
@@ -367,7 +367,7 @@ class my_widgets_item2 extends WP_Widget{
     //     $this->name = $name;
     // }
     function my_widgets_item2(){
-        parent::WP_Widget(false, $name = 'スライダーウィジェット');
+        parent::WP_Widget(false, $name = 'パネルウィジェット');
     }
     
     // ウィジェットの入力項目を作成する処理
@@ -429,13 +429,13 @@ class my_widgets_item2 extends WP_Widget{
         //ウィジェットから入力された情報がある場合、htmlを表示する
         if($url && $img && $skill){
     ?>
-        <div class="p-slider__panel">
+        <div class="p-panel">
             <a href="<?php echo $url; ?>">
-                <div class="p-slider__tr">
-                    <img src="<?php echo $img; ?>" class="p-slider__img">
+                <div class="p-panel__tr">
+                    <img src="<?php echo $img; ?>" class="p-panel__img">
                 </div>
             </a>
-            <span class="p-slider__name"><?php echo $skill; ?></span>
+            <span class="p-panel__name"><?php echo $skill; ?></span>
         </div>
    
     <?php

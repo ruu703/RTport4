@@ -51,13 +51,7 @@ nav a{
           &:hover::after {
         width:  100%;
           }
-
-// @include mq(sm){
-//       display: block;
-//       padding: 30px;
-//       text-align: center;
-//     }
-}
+    }
 p{
     font-size:16px;
 }
@@ -66,47 +60,4 @@ a{
   color:$font-color;
   position: relative;
   display: inline-block;
-//   transition: .3s;
-    
-//   &::after {
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   content: '';
-//   width: 0;
-//   height: 1px;
-//   background-color: $font-color;
-//   transition: .3s;
-// }
-//     &:hover::after {
-//   width:  100%;
-//     }
-}
-
-
-.fa-angle{
-    &-left{
-    top:38%;
-    left: 2%;
-    opacity: 0;
-        @include mq(md){
-         top:36%;   
-    }
-        @include mq(lg){
-         top:36%;   
-        }
-    }
-    &-right{
-    top:38%;
-    right: 2%;
-    opacity: 0;
-        @include mq(md){
-            top:36%;
-            right: 0;
-        }
-        @include mq(lg){
-            top:36%;
-            right: 0;
-        }
-    }
 }

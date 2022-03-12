@@ -1,0 +1,26 @@
+.p-panel{
+    width: calc(25% - 5%);
+    height: auto;
+    float: left;
+    margin: 0 5% 3% 0;
+    box-sizing: border-box;
+    transition: .3s;
+    @include mq(){
+      width: calc(50% - 5%); 
+    }
+    @include mq(md){
+      width: calc(33.3% - 5%); 
+    }
+          &__tr{
+         overflow: hidden;
+          }
+          &__img{
+          transition: .3s;
+          opacity: 0.9;
+              &:hover{
+              transform: rotate(3deg) scale(1.1);
+              transition: .3s;
+              opacity: 1;
+              }
+          }
+      }

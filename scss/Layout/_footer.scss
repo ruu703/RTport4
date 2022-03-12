@@ -7,15 +7,10 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: $site-width;
     background: $content-bg;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    &__copy{
-        @include mq(){
-            font-size:12px;
-        }
-    }
 }

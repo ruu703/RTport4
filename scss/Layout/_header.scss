@@ -3,13 +3,12 @@
 // =======================================
 
 .header{
-    width: 100%;
-    // position: absolute;
-    &.float-active-mp{
+    width: $site-width;
+    &.float-active-sp{
     @include mq(){
     position: fixed;
     top: 0;
-    width: 100%;
+    width: $site-width;
     background-color: rgba(255, 255, 255, 0.7);
     transition: all .5s;
     z-index: 4;
