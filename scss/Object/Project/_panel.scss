@@ -17,8 +17,21 @@
           &__img{
           transition: .3s;
           opacity: 0.9;
+          border: solid 1px #106A88;
+          height: 140px;
+          width: 300px;
+          border-radius: 3px;
+          @include mq(){
+            height: 100px;
+          }
+          @include mq(md){
+            height: 100px; 
+          }
+          @include mq(lg){
+            height: 100px; 
+          }
               &:hover{
-              transform: rotate(3deg) scale(1.1);
+              transform: rotate(3deg) scale(1.11);
               transition: .3s;
               opacity: 1;
               }

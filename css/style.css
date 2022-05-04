@@ -233,15 +233,13 @@ select {
   height: 100%;
   float: right;
   width: 30%;
-  padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
   @media screen and (max-width: 414px) {
     .sidebar {
       width: 95%;
       margin-left: auto;
       margin-right: auto;
-      float: inherit;
-      padding: 30px 30px; } }
+      float: inherit; } }
   @media screen and (min-width: 415px) and (max-width: 768px) {
     .sidebar {
       width: 95%;
@@ -249,8 +247,7 @@ select {
       margin-right: auto;
       float: inherit;
       display: flex;
-      flex-wrap: wrap;
-      padding: 30px 30px; } }
+      flex-wrap: wrap; } }
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     .sidebar {
       width: 95%;
@@ -258,19 +255,12 @@ select {
       margin-right: auto;
       float: inherit;
       display: flex;
-      flex-wrap: wrap;
-      padding: 30px 30px; } }
+      flex-wrap: wrap; } }
   .sidebar__item {
     padding: 20px 0;
     margin-right: auto;
     margin-left: auto;
     width: 80%; }
-    @media screen and (min-width: 415px) and (max-width: 768px) {
-      .sidebar__item {
-        width: 45%; } }
-    @media screen and (min-width: 769px) and (max-width: 1024px) {
-      .sidebar__item {
-        width: 45%; } }
 
 .c-btn {
   border: none;
@@ -477,7 +467,8 @@ select {
   height: 200px;
   width: 200px;
   object-fit: cover;
-  border-radius: 10px; }
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
   @media screen and (max-width: 414px) {
     .p-prof__img {
       height: 160px;
@@ -651,9 +642,22 @@ select {
     overflow: hidden; }
   .p-panel__img {
     transition: .3s;
-    opacity: 0.9; }
+    opacity: 0.9;
+    border: solid 1px #106A88;
+    height: 140px;
+    width: 300px;
+    border-radius: 3px; }
+    @media screen and (max-width: 414px) {
+      .p-panel__img {
+        height: 100px; } }
+    @media screen and (min-width: 415px) and (max-width: 768px) {
+      .p-panel__img {
+        height: 100px; } }
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .p-panel__img {
+        height: 100px; } }
     .p-panel__img:hover {
-      transform: rotate(3deg) scale(1.1);
+      transform: rotate(3deg) scale(1.11);
       transition: .3s;
       opacity: 1; }
 

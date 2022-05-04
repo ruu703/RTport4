@@ -6,14 +6,13 @@
             <title><?php bloginfo('name'); ?> - <?php wp_title(); ?></title>
             <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap" rel="stylesheet">
-            <link type="text/css" rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+            <!-- <link type="text/css" rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>"> -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
-            <?php
-            wp_deregister_script('jquery');
-            wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1');
-            ?>
-            <?php wp_enqueue_script('progressbar.js', '/wp-content/themes/portfolio/js/progressbar.js'); ?>
-            <?php wp_enqueue_script('app.js', '/wp-content/themes/portfolio/js/app.js'); ?>
+            <!-- favicon -->
+            <link rel="apple-touch-icon" type="image/png" href="/portfolio/apple-touch-icon-180x180.png">
+            <link rel="icon" type="image/png" href="/portfolio/icon-192x192.png">
+            
+            
             <!-- wordPress管理画面などから設定した内容が反映される -->
             <?php wp_head(); ?>
         </head>

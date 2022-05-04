@@ -17,7 +17,7 @@ Template Name: Custom 〜カスタム固定ページ〜
               <?php if (have_posts()) : // WordPress ループ
                     while (have_posts()) : the_post(); // くり返し処理開始　?>
                     <!-- 固定ページのIDを出力 -->　　<!-- 固定ページごとにclass属性を設定できる -->
-                    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <div id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <!-- 投稿した固定ページ本文 -->
                         <?php the_content(); ?>
                     </div>

@@ -2,14 +2,16 @@
 
 // JS・CSSファイルを読み込む
 function add_files() {
-	// WordPress提供のjquery.jsを読み込まない
-	//wp_deregister_script('jquery');
+	wp_deregister_script('jquery');
 	// jQueryの読み込み
-	//wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', "", "20160608", false );
+    wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', "", "20160608", false );
 	// サイト共通JS
-	wp_enqueue_script( 'app-script', get_template_directory_uri(). '/js/app.js', array( 'jquery' ), '20160608', true );
+    wp_enqueue_script( 'app.js', get_template_directory_uri(). '/js/app.js', array( 'jquery' ), '20160608', false );
 	// サイト共通のCSSの読み込み
-	//  wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', "", '20160608' );
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', "", '20160608' );
+    // プラグインJS(プログレスバー)読み込み
+    wp_enqueue_script('progressbar.js', '/wp-content/themes/portfolio/js/progressbar.js');
+     
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
@@ -435,7 +437,7 @@ class my_widgets_item2 extends WP_Widget{
                     <img src="<?php echo $img; ?>" class="p-panel__img">
                 </div>
             </a>
-            <span class="p-panel__name"><?php echo $skill; ?></span>
+            <p class="p-panel__name"><?php echo $skill; ?></p>
         </div>
    
     <?php

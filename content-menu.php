@@ -9,11 +9,9 @@
         <?php wp_nav_menu( array(
         'theme_location'=>'mainmenu',
         // メニューを囲いたいタグがあれば指定する。
-        //今回はベタ書きでnavタグがすでにあるので指定しない
         'container'     =>'',
         // 生成されるメニューのタグにクラス属性をつけることができる
         'menu_class'    =>'test-class',
-        // お決まりの書き方
         'items_wrap'    =>'<ul>%3$s</ul>'));
         ?>
 

@@ -13,9 +13,9 @@ $(function(){
     /* スクロールで要素がフワッと出現 */
     $(window).scroll(function (){
         $('.u-down-to-top').each(function(){
-            var elemPos = $(this).offset().top;
-            var scroll = $(window).scrollTop();
-            var windowHeight = $(window).height();
+            let elemPos = $(this).offset().top;
+            let scroll = $(window).scrollTop();
+            let windowHeight = $(window).height();
             if (scroll > elemPos - windowHeight + 500){
                 $(this).addClass('scrollin');
             }
@@ -29,8 +29,8 @@ $(function(){
     */
     
     // ハンバーガーメニュー
-     var navPosSp = $('.js-header-menu-target').offset().top;
-     var _window = $(window);
+     const navPosSp = $('.js-header-menu-target').offset().top;
+     const _window = $(window);
     
     $(window).on('scroll', function(){
          if($(this).scrollTop() > navPosSp){
@@ -41,8 +41,8 @@ $(function(){
     });
     _window.trigger('scroll');
 
-     var navPos = $('.js-toggle-sp-menu-target').offset().top;
-     var _window = $(window);
+     const navPos = $('.js-toggle-sp-menu-target').offset().top;
+    //  const _window = $(window);
     
     // PC版ナビゲーションメニュー
     $(window).on('scroll', function(){
@@ -58,8 +58,8 @@ $(function(){
     /* スキルメニューのプログレスバー */
     if($('.js-progressbar-target').length){ // topページのみで発火させる
 
-     var skill = $('.js-progressbar-target').offset().top;
-     var _window = $(window);
+     const skill = $('.js-progressbar-target').offset().top;
+    //  const _window = $(window);
     
     $(window).on('scroll', function(){
             if($(this).scrollTop() > skill - 350){

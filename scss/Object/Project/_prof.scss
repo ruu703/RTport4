@@ -30,7 +30,8 @@
         height: 200px;
         width: 200px;
         object-fit: cover;
-        border-radius: 10px;
+        border-radius: 3px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         @include mq(){
             height: 160px;
             width: 160px;
