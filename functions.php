@@ -8,7 +8,7 @@ function add_files() {
 	// サイト共通JS
     wp_enqueue_script( 'app.js', get_template_directory_uri(). '/js/app.js', array( 'jquery' ), '20160608', false );
 	// サイト共通のCSSの読み込み
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', "", '20160608' );
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', "", '20160608' );
     // プラグインJS(プログレスバー)読み込み
     wp_enqueue_script('progressbar.js', '/wp-content/themes/portfolio/js/progressbar.js');
      

@@ -1,3 +1,9 @@
+/* ビルドで消えるので注意
+theme Name:portfolio
+Author:ruka
+Description:ポートフォリオ用テーマ
+*/
+
 @charset "UTF-8";
 html, body {
   font-family: "Poiret One", ‘ヒラギノ角ゴシック’, "M PLUS Rounded 1c", sans-serif, ‘メイリオ’, sans-serif, cursive;

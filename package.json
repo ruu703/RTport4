@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "node-sass --include-path scss scss/app.scss css/style.css",
+    "build": "node-sass --include-path scss scss/app.scss style.css",
     "watch": "nodemon -e scss -x \"npm run build\""
   },
   "author": "",
